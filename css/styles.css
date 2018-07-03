@@ -1,6 +1,7 @@
 body, ul, li, h1, h2, h3 {
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 body {
@@ -22,6 +23,7 @@ header {
     background: #fff;
     top: 0;
     left:0;
+    z-index: 2;
 }
 
 main {
@@ -51,7 +53,7 @@ h2 {
 }
 
 h3 {
-    color: #666;
+    color: #000;
 }
 
 .flex-container {
@@ -90,9 +92,18 @@ header .flex-container {
 
 .hero-section { 
     padding-top: 10px;
+    position: relative;
 }
 
 .hero-section img {
+    width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
     width: 100%;
 }
 
@@ -103,6 +114,7 @@ article h3 {
 
 .flex-container>article {
     margin: 10px;
+    flex: 33.33%;
 }
 
 footer {
@@ -182,9 +194,22 @@ aside h2 {
 }
 
 @media (max-width: 768px) {
+
+    main {
+        margin-top: 146px;
+    }
     footer .flex-container, main .flex-container {
         flex-direction: column;
         flex: 100%;
+    }
+
+    .hero-overlay {
+        margin-top: 0;
+        background: rgba(0,0,0,0.4);
+    }
+
+    .hero-overlay h3 {
+        color: #fff;
     }
     
     .container {
@@ -197,6 +222,24 @@ aside h2 {
 
     .top-nav li a {
         padding: 10px; 
+    }
+}
+
+@media (max-width: 360px) {
+    .top-nav li a {
+        font-size: 1em;
+    }
+
+    main {
+        margin-top: 140px;
+    }
+
+    .comp-name {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
     }
 }
 
